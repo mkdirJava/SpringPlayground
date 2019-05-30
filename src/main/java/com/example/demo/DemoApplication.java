@@ -58,5 +58,10 @@ public class DemoApplication  implements CommandLineRunner{
 	public Mine mine() {
 		return new Mine();
 	}
+	
+	@Bean
+	public Hooks hooks() {
+		return new Hooks();
+	}
 
 }

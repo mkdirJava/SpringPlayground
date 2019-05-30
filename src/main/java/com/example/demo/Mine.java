@@ -24,32 +24,36 @@ public class Mine implements InitializingBean, DisposableBean{
 		return name;
 	}
 	
+	
+	
+	// method callbacks
 	public void start() {
-		System.out.println("THis is an init method");
+		System.out.println("THis is an start method");
+	}
+	public void stop() {
+		System.out.println("This is the stop mehtod");
 	}
 	
-	public void stop() {
-		System.out.println("This is the destroy mehtod");
-	}
+	// interface implementation for callbacks
 	@Override
 	public void destroy() throws Exception {
 		System.out.println("This is the destroyBean");
-		
 	}
 	@Override
 	public void afterPropertiesSet() throws Exception {
-		System.out.println("This is the Init Bean");
-		
+		System.out.println("This is the Init Bean");	
 	}
 	
+	//annotation callbacks
 	@PostConstruct
 	public void annoStarer() {
 		System.out.println("This is the annoStarter");
 	}
-	
 	@PreDestroy
 	public void annoStopper() {
 		System.out.println("This is the annoStoppper");
 	}
+	
+
 
 }
